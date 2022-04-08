@@ -1,0 +1,51 @@
+.navBarWrapper{
+    background-color:#FDC6C6;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.linkWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:40%;
+}
+.linkWrapper a{
+    text-decoration: none;
+    color: black;
+    font-weight:bold;
+font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+
+}
+.logoImage{
+    height:11vh;
+    width:7vw;
+    margin-left: 20px;
+}
+.callandConnectWrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:13%;
+}
+.callIcon{
+    color:black;
+    size:96px;
+}
+.connectToWalletButton{
+    background-color: black;
+    color:white;
+    padding:4px 10px;
+    border-radius:16px;
+}
+.accountHolder{
+    border:2px solid rgba(0, 0, 0, 0.121);
+    border-radius: 16px;
+    font-size: 20px;
+    padding:4px 8px;
+    color: black;
+    text-decoration: none;
+    background-color: #C4C4C4;
+}
