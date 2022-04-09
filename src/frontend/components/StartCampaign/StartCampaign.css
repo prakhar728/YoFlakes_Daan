@@ -1,5 +1,4 @@
 .startWrapper{
-    border:2px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -9,7 +8,7 @@
 
 .tagline{
     color:#DE2020;
-    font-size:26px;
+    font-size:30px;
     font-weight: 600;
     font-family: 'Raleway', sans-serif;
     width:70vw;
@@ -46,13 +45,11 @@
     align-items: center;
 }
 .dropZoneWrapper{
-    width:20vw;
-    height:20vh;
+    min-width:20vw;
+    min-height:20vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23DE2020D4' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-    background-color: #FEB3B3;
 }
 .dropZoneSubWrapper{
     width: 100%;
@@ -60,7 +57,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23DE2020D4' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    background-color: #FEB3B3;
+    padding:8px 0;
 }
+.dropImageWrapper{
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23DE2020D4' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    padding:4px;
+}
+
 .uploadTextholder{
     display: flex;
     flex-direction: column;
@@ -73,15 +78,20 @@
     width:80%;
     text-align: center;
 }
+.addressAndDateWrapper{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .organiseFormWrapper{
-    border:2px solid black;
     width:60vw;
     border:0 auto;
     display: flex;
     justify-content: space-evenly;
-    background-color: #fdc6c61a;
     padding:10px 0;
-
+    height:50vh;
 }
 .addressInputHolder{
     text-align: center;
@@ -89,13 +99,15 @@
     font-size: 20px;
     outline: none;
     border:1px solid rgba(0, 0, 0, 0.735);
-    width:16vw;
+    width:14vw;
     background-color: #FEB3B3;
+    padding:4px 0;
 
 }
 .dateHolder{
     text-align: center;
-    width:16vw;
+    width:14vw;
+    padding:4px 0;
     font-size: 20px;
     border-radius: 16px;
     border:1px solid rgba(0, 0, 0, 0.735);
@@ -103,7 +115,6 @@
     color:#00000081
 }
 .rightHalf{
-    border:2px solid blue;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -116,9 +127,10 @@
     border:1px solid rgba(0, 0, 0, 0.735);
     background-color: #FEB3B3;
     color:#00000081;
-    font-size: 20px;
+    font-size: 16px;
     margin: 0 auto;
-    padding: 2px 10px;
+    padding: 14px 12px;
+    width:20vw;
 }
 .detailHolder{
     border-radius: 16px;
@@ -129,4 +141,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    width:30vw;
+}
+.fullFormWrapper{
+    background-color: #fdc6c61a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:8px 36px ;
+}
+.submitButton{
+    border-radius: 16px;
+    width:10vw;
+    font-size: 16px;
+    padding:6px 0;
+    background-color:#fa6565ea;
+    border:1px solid rgba(0, 0, 0, 0.735);
+    color:white;
+    font-weight: 500;
+}
+.leafWrapper{
+    height: 40vh;
+    position: absolute;
+    right: 4%;
+    bottom: 2%;
+}
+.leafImage{
+    height:100%;
 }
