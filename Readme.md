@@ -26,3 +26,5 @@ Here's the Figma Design File
 This website uses Polygon network because of it's low gas fees and high transaction rate.
 
 It utilises ipfs to upload and store the nfts
+
+We used React, Figma, blockchain and IPFS to make this project a success.
