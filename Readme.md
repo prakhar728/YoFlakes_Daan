@@ -23,7 +23,7 @@ Here's the Figma Design File
 
  [Figma!](https://www.figma.com/file/dqqeN55uWUssjmTaWbXqmm/Daan?node-id=0%3A1) 
 
-* This website uses Polygon network because of it's low gas fees and high transaction rate.
+* This website uses Ethereum network because of it's low gas fees and high transaction rate.
 
 * It utilises ipfs to upload and store the nfts
 
