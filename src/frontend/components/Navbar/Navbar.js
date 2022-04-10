@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css';
 import Logo from '../../Assets/logo.png';
 import { Link } from 'react-router-dom';
 import { MdWifiCalling3 } from "react-icons/md";
 import { IconContext } from "react-icons";
-
+import Loading from '../Loading/Loading';
 const Navbar = ({ web3Handler, account }) => {
+  const [loading, setloading] = useState(false);
+
+  if(loading)
+  return <Loading />
 
   return (
     <div className='navBarWrapper'>
@@ -13,7 +17,7 @@ const Navbar = ({ web3Handler, account }) => {
         <img src={Logo} alt="Daan Logo" className='logoImage' />
       </div>
       <div className='linkWrapper'>
-        <div><Link to='/Home'>Home</Link></div>
+        <div><Link to='/'>Home</Link></div>
         <div><Link to='/About'>About Us</Link></div>
         <div><Link to='/Donate'>Donate</Link></div>
       </div>

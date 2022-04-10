@@ -14,18 +14,20 @@ contract Organise is ReentrancyGuard{
     struct campaign{
         string _ipfsURI;
         uint _amountRaised;
-        address payable _addressToDonate;
     }
 
-    mapping (uint=>campaign) campaigns;
+    mapping (uint=>campaign) public campaigns;
 
     constructor(){
         contractOwner=payable(msg.sender);
     }
 
-    function createCampaign(string memory _IpfsURI,address _toDonate) external returns(uint){
+    function campaignIDReturn() external view returns(uint){
+        return _campaignId.current();
+    }
+    function createCampaign(string memory _IpfsURI) external returns(uint){
         _campaignId.increment();
-        campaigns[_campaignId.current()]=campaign(_IpfsURI,0,payable(_toDonate));
+        campaigns[_campaignId.current()]=campaign(_IpfsURI,0);
         return _campaignId.current();
     }
 }

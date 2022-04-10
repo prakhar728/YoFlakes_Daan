@@ -1,0 +1,102 @@
+.donateWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    column-gap: 10px;
+    align-items: center;
+}
+.donateTextWrapper{
+    font-size: 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+}
+.fundraiserWrapper{
+    width:85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #fdc6c634;
+    height:35vh;
+
+}
+.fundRaiserImage{
+    width:15vw;
+}
+.secondHalf{
+    height: 100%;
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.fundraiserHeading{
+    font-size: 20px;
+    padding:8px 24px;
+    background-color: #feb3b3b6;
+    border-radius: 16px;
+    font-family: 'Raleway', sans-serif;
+
+}
+.fundraiserAbout{
+    width:80%;
+    height:60%;
+    background-color: #feb3b3b6;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+
+}
+.thirdHalf{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.fundsRaisedWrapper{
+    font-size: 24px;
+}
+.fundsRaised{
+    color:#F34040;
+    font-family: 'Raleway', sans-serif;
+
+}
+.donateNowText{
+    color:#FF2525;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+
+}
+.donateWrapper{
+    min-height:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly ;
+    row-gap: 20px;
+}
+.amountHolder{
+    text-align: center;
+    background-color: #E5E5E5;
+    border-radius: 16px;
+    padding: 4px 0;
+}
+.buttonSend{
+    border-radius: 24px;
+    padding: 4px;
+    border: none;
+}
+.navigateToStart:hover{
+    cursor: pointer;
+}
+.noFundRaiser{
+    font-size:32px;
+}
