@@ -36,3 +36,9 @@ Here's the Figma Design File
 4. Run `npm start` 
 5. That's it! Start donating
 
+# THE FUTURE FOR THE PROJECT
+
+The project has a much greater future. 
+
+We wanted to include a way to track your donations and watch how they were used. We intend to implement this feature in the future.
+
