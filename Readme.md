@@ -22,3 +22,7 @@ Here's the Figjam File to explain the User Flow
 Here's the Figma Design File 
 
 <!-- [Figma!](https://www.figma.com/file/dqqeN55uWUssjmTaWbXqmm/Daan?node-id=3%3A65!) -->
+
+This website uses Polygon network because of it's low gas fees and high transaction rate.
+
+It utilises ipfs to upload and store the nfts
