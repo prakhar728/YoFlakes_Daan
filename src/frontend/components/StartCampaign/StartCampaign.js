@@ -4,8 +4,9 @@ import leafPng from '../../Assets/Leaf2.png';
 import { Web3Storage } from 'web3.storage';
 import { create } from 'ipfs-http-client';
 import { ethers } from 'ethers';
+import { useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 const client = create('https://ipfs.infura.io:5001/api/v0');
-
 
 
 const StartCampaign = ({account,DonateContract}) => {
@@ -14,10 +15,15 @@ const StartCampaign = ({account,DonateContract}) => {
     const [details, setDetails] = useState('');
     const [date, setdate] = useState('');
     const [imageURL, setimageURL] = useState(null);
+    const [loading, setloading] = useState(false);
+    const [loadingMessage, setloadingMessage] = useState('');
+    const token = '';
     const storage = new Web3Storage({ token: token });
-
+    let navigate = useNavigate();
     
     const web3Upload = async (e) => {
+        setloadingMessage('Uploading image to IPFS');
+        setloading(true);
         e.preventDefault();
         const fileU = e.target.files;
         console.log(fileU);
@@ -27,12 +33,18 @@ const StartCampaign = ({account,DonateContract}) => {
             console.log(fileU[0].name);
             console.log(`https://ipfs.io/ipfs/${rootCID}/${fileU[0].name}`);
             setimageURL(`https://ipfs.io/ipfs/${rootCID}/${fileU[0].name}`);
+            setloading(false);
+            setloadingMessage('');
         }
         catch (err) {
             console.log("Error with web3storage", err);
+            setloading(false);
+
         }
     }
     const handleSubmit =async (e)=>{
+        setloadingMessage('Upload form data to IPFS');
+        setloading(true);
         e.preventDefault();
         console.log(headline,details,address,date,imageURL);
         console.log(ethers.utils.isAddress(address));
@@ -41,6 +53,8 @@ const StartCampaign = ({account,DonateContract}) => {
            console.log(`https://ipfs.io/ipfs/${result.path}`);
 
             console.log(result);
+            setloading(false);
+            setloadingMessage('');
            createFundraiser(`https://ipfs.io/ipfs/${result.path}`);
         }
         catch(err){
@@ -48,14 +62,21 @@ const StartCampaign = ({account,DonateContract}) => {
         }
     }
     const createFundraiser = async (metadata) =>{
+        setloading(true);
+        setloadingMessage('Creating fundraiser on blockchain');
         await(await DonateContract.createCampaign(metadata)).wait();
         const id = await DonateContract.campaignIDReturn();
         console.log(id);
+        setloading(false);
+        setloadingMessage('');
+        navigate('/Donate')
     }
 
     
+
     return (
         <div className='startWrapper'>
+        {loading && <Loading message={loadingMessage} />}
             <div className='tagline'>
                 Ready to start your own Fundraiser?
             </div>

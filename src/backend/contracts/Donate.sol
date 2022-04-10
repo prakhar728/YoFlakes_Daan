@@ -21,7 +21,9 @@ contract Organise is ReentrancyGuard{
     constructor(){
         contractOwner=payable(msg.sender);
     }
-
+    function makeDonation(uint id,uint amount) external{
+        campaigns[id]._amountRaised+=amount;
+    }
     function campaignIDReturn() external view returns(uint){
         return _campaignId.current();
     }

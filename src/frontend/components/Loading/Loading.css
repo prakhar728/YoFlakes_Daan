@@ -4,6 +4,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    position: absolute;
+    z-index: 1;
 }
 .loadingBox{
     border:2px solid rgba(0, 0, 0, 0.192);
@@ -15,6 +17,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    font-family: 'Raleway', sans-serif;
+
 }
 .loadingText{
     font-size:32px;

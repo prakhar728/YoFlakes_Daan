@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Navbar.css';
 import Logo from '../../Assets/logo.png';
 import { Link } from 'react-router-dom';
 import { MdWifiCalling3 } from "react-icons/md";
 import { IconContext } from "react-icons";
 import Loading from '../Loading/Loading';
+import {FaUserAlt} from 'react-icons/fa';
 const Navbar = ({ web3Handler, account }) => {
-  const [loading, setloading] = useState(false);
-
-  if(loading)
-  return <Loading />
+ 
 
   return (
     <div className='navBarWrapper'>
@@ -22,6 +20,9 @@ const Navbar = ({ web3Handler, account }) => {
         <div><Link to='/Donate'>Donate</Link></div>
       </div>
       <div className='callandConnectWrapper'>
+      <IconContext.Provider value={{ size: "40px",color:"black" }}>
+        <Link to='/profile'><FaUserAlt /></Link> 
+        </IconContext.Provider>
         <IconContext.Provider value={{ size: "40px" }}>
           <div><MdWifiCalling3 className='callIcon' /></div>
         </IconContext.Provider>

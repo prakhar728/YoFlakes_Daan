@@ -1,0 +1,43 @@
+.profileWrapper{
+    height:89vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top:8vh;
+}
+.profileHeading{
+    font-size:24px;
+    font-family: 'Raleway', sans-serif;
+}
+.cardsWrapper{
+    width:100%;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 4vw;
+    flex-wrap: wrap;
+    padding:2vh 4vw;
+}
+.cardWrapperss{
+    width:15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cardImage{
+    width: 14vw;
+}
+.badgeDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 24px;
+
+}
+.campaignId{
+    font-size: 24px;
+}
+.amountGiven{
+    font-size: 16px;
+}

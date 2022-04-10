@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Navbar from './Navbar/Navbar';
 import Home from './Home/Home';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {ethers} from 'ethers';
 import StartCampaign from './StartCampaign/StartCampaign';
 import DonateAddress from '../contractsData/Organise-address.json';
@@ -16,12 +16,17 @@ import NFTAddress from '../contractsData/NFT-address.json';
 import NFTAbi from '../contractsData/NFT.json';
 import Donate from './Donate/Donate';
 import Loading from './Loading/Loading';
+import awardNft from './AwardNft';
+import Profile from './Profile/Profile';
 
 function App() {
   const [account, setaccount] = useState(null);
   const [loading, setloading] = useState(true);
   const [donateContract, setDonateContract] = useState(null);
+  const [signerState, setsignerState] = useState(null);
   const [nftContract, setnftContract] = useState(null);
+
+  
   const web3Handler = async () => {
     const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
     setaccount(accounts[0]);
@@ -29,6 +34,7 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
     const signer = provider.getSigner();
+    setsignerState(signer);
     console.log(accounts[0]);
     
     loadContracts(signer);
@@ -51,7 +57,8 @@ function App() {
       <Routes>
       <Route index element={<Home />} />
       <Route path='/startcampaign' element={<StartCampaign account={account} DonateContract={donateContract} />} />
-      <Route path='/donate' element={<Donate account={account} DonateContract={donateContract} />} />
+      <Route path='/donate' element={<Donate account={account} DonateContract={donateContract} signer={signerState} nftContract={nftContract} />}/> 
+      <Route path='/profile' element={<Profile account={account} nftContract={nftContract} />}/> 
   </Routes>
     )}
    

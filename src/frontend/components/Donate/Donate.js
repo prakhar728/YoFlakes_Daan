@@ -6,7 +6,9 @@ import { IoSend } from 'react-icons/io5';
 import hands from '../../Assets/Hands.png';
 import { useNavigate } from "react-router-dom";
 import Loading from '../Loading/Loading';
-const Donate = ({DonateContract,account}) => {
+import { ethers } from 'ethers';
+import awardNft from '../AwardNft';
+const Donate = ({DonateContract,account,signer,nftContract}) => {
     const [amount, setamount] = useState({});
     const [campaignsSet, setcampaignsSet] = useState(null);
     const [loading, setloading] = useState(true);
@@ -18,21 +20,38 @@ const Donate = ({DonateContract,account}) => {
     const navigateToStart = () =>{
         navigate('/startcampaign')
     }
-    
-    const sendMoney = (e) =>{
-        console.log(e.id);
+    const changeAmount = (value,id) =>{
+        let temp = amount;
+        temp[id]=value;
+        setamount(temp);
+    }
+    const sendMoney =async (e) =>{
+        console.log(amount[e.id]);
         console.log(campaignsSet[e.id]);
+        const tx = signer.sendTransaction({
+            to: campaignsSet[e.id].address,
+            value: ethers.utils.parseEther(amount[e.id])
+        });
+        console.log(e.id,parseInt(amount[e.id]));
+        await(await DonateContract.makeDonation(e.id+1,parseInt(amount[e.id]))).wait();
+        awardNft(e.id+1,amount[e.id],nftContract);
+        loadFundRaisers();
+
     }
     const loadFundRaisers =async ()=>{
         setloadingMessage('Loading Fundraisers For you!');
         const campaignCount = await DonateContract.campaignIDReturn();
+        let tempSet = {}
+        for(let i=0;i<=campaignCount-1;i++){
+            tempSet[`${i}`]='F';
+        }
+        setamount(tempSet);
         let campaigns = [];
         for(let i=1;i<=campaignCount;i++){
             const campaign = await DonateContract.campaigns(i);
-            console.log(campaign);
+            console.log(campaign._amountRaised);
             const responseMetadata = await fetch(campaign[0]);
             const metadataJson = await responseMetadata.json();
-            console.log(metadataJson);
             campaigns.push({
                 date:metadataJson.date,
                 details:metadataJson.details,
@@ -41,7 +60,7 @@ const Donate = ({DonateContract,account}) => {
                 address:metadataJson.address,
                 raised:parseInt(campaign[1])
             })
-            console.log(campaigns);
+            console.log(parseInt(campaign[1]));
         }
         setcampaignsSet(campaigns);
         setloading(false);
@@ -67,10 +86,12 @@ const Donate = ({DonateContract,account}) => {
                           <div className='fundraiserAbout'>{camp.details}</div>
                       </div>
                       <div className='thirdHalf'>
-                          <div className='fundsRaisedWrapper'><span className='fundsRaised'>Funds Raised :</span> {camp.raised}</div>
+                          <div className='fundsRaisedWrapper'><span className='fundsRaised'>Funds Raised :</span> {camp.raised} ETH</div>
                           <div className='donateWrapper'>
                               <div className='donateNowText'>DONATE NOW</div>
-                              <div><input placeholder='Amount'   className='amountHolder' />
+                              <div><input placeholder='Amount'   className='amountHolder' value={amount.id}
+                              onChange={e=>{ changeAmount(e.target.value,id)}}
+                               />
                                   <button className='buttonSend'
                                   onClick={e=>{sendMoney({id})}} >
                                       <IconContext.Provider value={{ size: "30px", color: 'red' }}>
