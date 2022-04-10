@@ -55,7 +55,7 @@ const Profile = ({ nftContract, account }) => {
                     </div>
                     <div className='badgeDetails'>
                         <div className='amountGiven'>Amount :{item.amount} item ETH</div>
-                        <div className='campaignId'>Campaign Id</div>
+                        <div className='campaignId'>Fundraiser Id</div>
                         <div className='redText'>{item.campaignid}</div>
                     </div>
                 </div>
