@@ -5,28 +5,32 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { useState } from 'react';
+import { ethers } from 'ethers';
+
+// IMPORTING COMPONENTS
 import Navbar from './Navbar/Navbar';
 import Home from './Home/Home';
-import { useEffect, useState } from 'react';
-import {ethers} from 'ethers';
 import StartCampaign from './StartCampaign/StartCampaign';
-import DonateAddress from '../contractsData/Organise-address.json';
-import DonateABI from '../contractsData/Organise.json';
-import NFTAddress from '../contractsData/NFT-address.json';
-import NFTAbi from '../contractsData/NFT.json';
 import Donate from './Donate/Donate';
 import Loading from './Loading/Loading';
-import awardNft from './AwardNft';
-import Profile from './Profile/Profile';
+import Profile from './CompleteProfile/Profile';
+
+// IMPORTING CONTRACTS AND DATA
+import FundraiserAddress from '../../contractsData/FundRaiser-address.json';
+import FundraiserABI from '../../contractsData/FundRaiser.json';
+import NftAddress from '../../contractsData/DaanNFT-address.json';
+import NftAbi from '../../contractsData/DaanNFT.json';
+import CampaignSingle from './CampaignSingle/CampaignSingle';
 
 function App() {
+
+
   const [account, setaccount] = useState(null);
   const [loading, setloading] = useState(true);
-  const [donateContract, setDonateContract] = useState(null);
   const [signerState, setsignerState] = useState(null);
-  const [nftContract, setnftContract] = useState(null);
+  const [contracts, setcontracts] = useState([]);
 
-  
   const web3Handler = async () => {
     const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
     setaccount(accounts[0]);
@@ -36,33 +40,37 @@ function App() {
     const signer = provider.getSigner();
     setsignerState(signer);
     console.log(accounts[0]);
-    
+
     loadContracts(signer);
   }
 
-   const loadContracts = (signer) => {
-     const Donate = new ethers.Contract(DonateAddress.address, DonateABI.abi, signer);
-     console.log(Donate);
-     setDonateContract(Donate);
-     const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer);
-     setnftContract(nft);
-     setloading(false);
-   }
+  const loadContracts = (signer) => {
+    var contractsData = [];
+    const Fundraiser = new ethers.Contract(FundraiserAddress.address, FundraiserABI.abi, signer);
+    contractsData.push(Fundraiser);
+    const nftContract = new ethers.Contract(NftAddress.address, NftAbi.abi, signer);
+    contractsData.push(nftContract);
+    console.log(contractsData);
+    setcontracts(contractsData);
+    setloading(false);
+  }
   return (
     <BrowserRouter>
-    <Navbar web3Handler={web3Handler} account={account}/>
-    {loading?(
-      <Loading message={'Connect to Metamask!'}/>
-    ):(
-      <Routes>
-      <Route index element={<Home />} />
-      <Route path='/startcampaign' element={<StartCampaign account={account} DonateContract={donateContract} />} />
-      <Route path='/donate' element={<Donate account={account} DonateContract={donateContract} signer={signerState} nftContract={nftContract} />}/> 
-      <Route path='/profile' element={<Profile account={account} nftContract={nftContract} />}/> 
-  </Routes>
-    )}
-   
-  </BrowserRouter>
+      <Navbar web3Handler={web3Handler} account={account} />
+      {loading ? (
+        <Loading message={'Connect to Metamask!'} />
+      ) : (
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path='/startcampaign' element={<StartCampaign account={account} contracts={contracts} />} />
+          <Route path='/donate' element={<Donate account={account} contracts={contracts} signer={signerState} />} />
+          
+          <Route path="/donate/:campaignId" element={<CampaignSingle contracts={contracts}  signer={signerState} account={account} />} />
+
+          <Route path='/profile' element={<Profile account={account} contracts={contracts} />} />
+        </Routes>
+      )}
+    </BrowserRouter>
   );
 }
 

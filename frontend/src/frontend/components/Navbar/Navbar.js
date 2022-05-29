@@ -2,11 +2,10 @@ import React from 'react'
 import './Navbar.css';
 import Logo from '../../Assets/logo.png';
 import { Link } from 'react-router-dom';
-import { MdWifiCalling3 } from "react-icons/md";
-import { IconContext } from "react-icons";
-import Loading from '../Loading/Loading';
-import {FaUserAlt} from 'react-icons/fa';
-const Navbar = ({ web3Handler, account }) => {
+import ContactUs from '../../Assets/Icons/ContactUS.svg';
+import Wallet from '../../Assets/Icons/Wallet.svg';
+import Profile from '../../Assets/Icons/Profile.svg';
+const Navbar = ({ web3Handler}) => {
  
 
   return (
@@ -16,27 +15,13 @@ const Navbar = ({ web3Handler, account }) => {
       </div>
       <div className='linkWrapper'>
         <div><Link to='/'>Home</Link></div>
-        <div><Link to='/About'>About Us</Link></div>
         <div><Link to='/Donate'>Donate</Link></div>
+        <div><Link to='#about'>About Us</Link></div>
       </div>
       <div className='callandConnectWrapper'>
-      <IconContext.Provider value={{ size: "40px",color:"black" }}>
-        <Link to='/profile'><FaUserAlt /></Link> 
-        </IconContext.Provider>
-        <IconContext.Provider value={{ size: "40px" }}>
-          <div><MdWifiCalling3 className='callIcon' /></div>
-        </IconContext.Provider>
-        <div className='buttonWrapper'>
-          {account ? (
-            <a href={`https://etherscan.io/address/${account}`}
-            className='accountHolder' >
-               {account.slice(0, 5) + '...' + account.slice(38, 42)}
-               </a>
-          ): (
-              <button className = 'connectToWalletButton' onClick = { web3Handler }>CONNECT</button>
-          )}
-
-      </div>
+          <Link to='/profile'><img src={Profile} alt="Profile Visit" className='profileVisitImg'/></Link> 
+          <img src={ContactUs} alt="Connect with Us"  className='contactUsImg'/>
+          <img src={Wallet} alt="Connect to Wallet" className='walletConnectImg' onClick = { web3Handler }/>
     </div>
     </div >
   )

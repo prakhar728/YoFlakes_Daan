@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend server to award NFTs",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon Server.js"

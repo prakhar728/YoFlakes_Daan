@@ -9,6 +9,10 @@ import { IconContext } from 'react-icons';
 import { RiUserHeartLine } from 'react-icons/ri';
 import { BiDonateHeart } from 'react-icons/bi';
 import illustrationAbout from '../../Assets/SavingMoney.png';
+import NFTBadge from '../../Assets/DAAN_NFT.png';
+import Footer from '../Footer/Footer';
+
+
 const Home = () => {
 
   return (
@@ -19,7 +23,6 @@ const Home = () => {
           <div className='homepagetext1'>Donate to Contribute</div>
           <div className='homepagetext2'>Let's build A <span className='redText'>Better World</span><br />Together!</div>
           <div className='tagLine'>We believe that only by joining hands we can make the world better and corruption fee. It's the duty of those who are in higher privelaged to help those in need.
-            
           </div>
           <div className='buttonsWrapperHome'>
             <button className='donateFundWrapper'>Donate Fund</button>
@@ -50,7 +53,7 @@ const Home = () => {
       </IconContext.Provider>
       <div className='frame2'>
         <div className='frame2Header'><span className='redText'>LET'S MAKE A <br />DIFFERENCE TODAY!</span></div>
-        <IconContext.Provider value={{ size: "30px" }}>
+        <IconContext.Provider value={{ size: "2rem" }}>
           <div className='frame2Cards'>
             <div className='cardWrapper'>
               <div className='card'>
@@ -59,7 +62,7 @@ const Home = () => {
                 </div>
                 <div className='cardPurpose'>Become a donator</div>
                 <div className='cardText'>Join the<br /> community!</div>
-                <div className='cardButton'>
+                <div >
                   <button className='cardBtn'>Explore campaigns</button>
                 </div>
               </div>
@@ -72,7 +75,7 @@ const Home = () => {
                 </div>
                 <div className='cardPurpose'>Need help?</div>
                 <div className='cardText'>Reach out to <br /> us!</div>
-                <div className='cardButton'>
+                <div >
                   <button className='cardBtn'>Connect with US</button>
                 </div>
               </div>
@@ -82,7 +85,7 @@ const Home = () => {
           </div>
         </IconContext.Provider>
       </div>
-      <div className='aboutSection'>
+      <div className='aboutSection' id="about">
         <div className='aboutHeader'>About Us</div>
         <div className='abouTagLine'>No middleman. No extra charges. No worries.</div>
         <div className='aboutFirstPara'>
@@ -114,18 +117,19 @@ const Home = () => {
           <div className='secondLine'>
           </div>
         </div>
-        {/* <div className='philanthropySection'>
+      </div>
+      <div className='philanthropySection'>
           <div className='philanthoryFirst'>
-
+          We value our philanthropists and recognise their sincere efforts and believe that philanthropy is a great work and philanthropists should be rewarded too.
           </div>
-          <div>
-
+          <div className='badgeContainer'>
+            <img src={NFTBadge} alt="NFT Badge" />
           </div>
           <div className='philanthorySecond'>
-
+          As a token of our gratefulness, for every donation you get a NFT recognizing your effort in helping the community!
           </div>
-        </div> */}
-      </div>
+        </div> 
+        <Footer />
     </div>
   )
 }
