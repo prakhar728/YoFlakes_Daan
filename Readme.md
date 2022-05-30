@@ -45,3 +45,5 @@ Why this lengthy process? Well through some time the NGO can be well accessed an
 3. Navigate to Frontend, install scripts and run `npm start` to get started.
 
 ## IF you do like our project give it a star!
+
+Read the future of Daan [Here](DaanAbout.md)
