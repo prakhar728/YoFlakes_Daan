@@ -11,7 +11,7 @@ const privateKey = process.env.privateKey;
 
 //Easy way (Web3 + @truffle/hdwallet-provider)
 const init3 = async (addressR,URI) => {
-  const provider = new Provider(privateKey, 'https://rpc-mumbai.maticvigil.com/v1/8672801189d10b2b2b6d4a3fae5c9e166a94c96f'); 
+  const provider = new Provider(privateKey, ''); 
   const web3 = new Web3(provider);
   const myContract = new web3.eth.Contract(
     MyContract.abi,
