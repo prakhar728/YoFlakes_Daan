@@ -3,8 +3,8 @@ const app = express();
 const dotenv = require('dotenv');
 const path = require('path');
 const nodeHtmlToImage = require('node-html-to-image')
-const {getFiles,storeFiles} = require('./IPFSHelper');
-const init3 = require('./Web3Helper');
+const {getFiles,storeFiles} = require('./Web3/IPFSHelper');
+const init3 = require('./Web3/Web3Helper');
 const cors = require('cors');
 
 dotenv.config();

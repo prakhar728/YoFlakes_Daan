@@ -1,7 +1,7 @@
 const Web3 = require('web3');
 const Provider = require('@truffle/hdwallet-provider');
-const MyContract = require('./contractsData/DaanNFT.json');
-const myContractAddress = require('./contractsData/DaanNFT-address.json');
+const MyContract = require('../contractsData/DaanNFT.json');
+const myContractAddress = require('../contractsData/DaanNFT-address.json');
 const dotenv = require('dotenv');
 
 dotenv.config();

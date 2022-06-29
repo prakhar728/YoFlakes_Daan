@@ -1,49 +1,45 @@
+# DAAN - Give your Heart Out
+## A Blockchain Powered Donation Site to lose the Middlemen. ❤️
 
-# THIS PROJECT DIFFERS?
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/prakhar728/Yoflakes_Daan?logo=github&style=for-the-badge)](https://github.com/prakhar728/)
+[![GitHub last commit](https://img.shields.io/github/last-commit/prakhar728/Yoflakes_Daan?style=for-the-badge&logo=git)](https://github.com/prakhar728/) 
+[![GitHub stars](https://img.shields.io/github/stars/prakhar728/Yoflakes_Daan?style=for-the-badge)](https://github.com/prakhar728/Yoflakes_Daan/stargazers) 
+[![My stars](https://img.shields.io/github/stars/prakhar728?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge&label=My%20stars)](https://github.com/prakhar728/Yoflakes_Daan/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/prakhar728/Yoflakes_Daan?style=for-the-badge&logo=git)](https://github.com/prakhar728/Yoflakes_Daan/network)
+[![Languages](https://img.shields.io/github/languages/count/prakhar728/Yoflakes_Daan?style=for-the-badge)](https://github.com/prakhar728/Yoflakes_Daan)
+[![Top](https://img.shields.io/github/languages/top/prakhar728/Yoflakes_Daan?style=for-the-badge&label=Top%20Languages)](https://github.com/prakhar728/Yoflakes_Daan)
+[![Issues](https://img.shields.io/github/issues/prakhar728/Yoflakes_Daan?style=for-the-badge&label=Issues)](https://github.com/prakhar728/Yoflakes_Daan)
+[![Watchers](	https://img.shields.io/github/watchers/prakhar728/Yoflakes_Daan?label=Watch&style=for-the-badge)](https://github.com/prakhar728/Yoflakes_Daan)
 
-Yes! This project is really different from the last one. In the current state the project had some major changes.
-
-1. Improving the codebase by sepraring Blockchain, Backend and frontend part.
-2. Making a completely gasless NFT rewarding system using Nodejs and Express.
-3. Making a well structured React Code.
-4. The UI had several Changes some of which include the navbar, individual components, the display of each fundraiser, the way of starting a fundraiser, the profile page etc.
-5. Governance Contracts were added in the blockchain and queued up for deploy and submission.
-6. Deployed the Website's initial stage for the use of user.
-7. PPT and Slides were added to make it possible for users to understand daan and it's motive.
-
-
-# WHAT IS DAAN?
-
-## The Problem
-The existing problem in the current Charity and Fundraiser system is that there's not 100% transparency. People donate to charity believing they are giving and contributing to the cause, they have to **TRUST** someone. 
-NGOs can be used as a front by big criminals or they can be fake to influence and use the sympathy of the people. 
-Daan aims to solve this. 
-* It uses Blockchain technology to create a Transparent system of Donations.  
-* Creates Transparency by displaying all the donations made till date.
-* Daan aims to incentivize philanthropy and the art of giving - through custom NFTs.
+Donate to the Needy using `Daan` with full transparency
 
 
-### Why the Blockchain?
-Blockchain offers what no other technology in the time can. It offers transparency, security and helps to create a trustless system - where nobody has to rely on trusting the other person.
+<p align="center">
+<a href="https://daangive.herokuapp.com/">
+<img src="https://github.com/prakhar728/YoFlakes_Daan/blob/main/frontend/src/frontend/Assets/Daan_Logo.jpeg?raw=true" alt="Daan-logo"/>
+</a>
+</p>
 
-#### The cost is high?
-The cost can be high on the Blockchain but thanks to Polygon network the gas fees is so low it's basically equally to none. A simple fundraiser can be started in no time and not much money is required.
+[![Generic badge](https://img.shields.io/badge/view-demo-blue?style=for-the-badge&label=View%20Demo%20Video)](https://youtu.be/6ci7VeZZmR0)
 
-## Where Daan Shines?
+## Features, Interfaces and Improvements
 
-Where the user is not the intended person. Suppose for a orphanage a third person was starting the Fundraiser. Now we don't want them to run away with the Money raised through donations - this is where Daan's governance module comes into play.
+1.
 
-The money donated to the Fundraisers running in Daan don't go directly to the person who started it but get's locked up in a vault for a intended time period. After the time period is over  a voting round begins where people who donated to campaign can vote and decide weather the Money should actually go into the hands of the person who started it or not. To make the voting a success - a majority should be achieved. 
+## Tech stack
 
-Why this lengthy process? Well through some time the NGO can be well accessed and thought over as well as looked into by other organization and future scams can be prevented.
+![image]()
 
-
-## Run on local machine.
-
-1. Navigate to Backend and install scripts using `npm i` and create a .env file similiar to .env.example.
-2. Navigate to Blockchain, install scripts and run the deployment scripts after setting up the .env file.
-3. Navigate to Frontend, install scripts and run `npm start` to get started.
-
-## IF you do like our project give it a star!
-
-Read the future of Daan [Here](DaanAbout.md)
+### Tools and Languages: 
+<p align="left"> 
+<a href="https://reactjs.org/" target="_blank"> <img src="https://www.svgrepo.com/show/354259/react.svg" alt="Reactjs" width="40" height="40"/> </a>
+<a href="https://www.javascript.com//" target="_blank"> <img src="https://www.svgrepo.com/show/355081/js.svg" alt="Javascript" width="40" height="40"/> </a>
+<a href="https://nodejs.org/en/" target="_blank"> <img src="https://nodejs.org/static/images/logo.svg" alt="Nodejs" width="40" height="40"/> </a>
+<a href="hhttps://docs.soliditylang.org/en/v0.8.15/" target="_blank"> <img src="https://www.svgrepo.com/show/373788/light-solidity.svg" alt="Solidity" width="40" height="40" 
+style="background-color:white"/> </a>
+<a href="https://hardhat.org/" target="_blank"> <img src="https://hardhat.org/_next/static/media/hardhat-logo.5c5f687b.svg" alt="Hardhat" width="140" height="40" style="background-color:white"/> </a> 
+<a href="https://expressjs.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" style="background-color:white" alt="express" width="40" height="40"/> </a>
+<a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a>
+<a href="https://heroku.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a>
+<a href="https://polygon.technology/" target="_blank"> <img src="https://imgs.search.brave.com/SgTaS0GpF718Utb8iblVGx8OJslXdSJVh4jHGWhWtVg/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jcnlw/dG9sb2dvcy5jYy9s/b2dvcy9wb2x5Z29u/LW1hdGljLWxvZ28u/cG5n" alt="heroku" width="40" height="40"/> </a> 
+</p>
