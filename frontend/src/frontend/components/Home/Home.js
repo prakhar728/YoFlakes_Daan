@@ -53,7 +53,7 @@ const Home = () => {
       </IconContext.Provider>
       <div className='frame2'>
         <div className='frame2Header'><span className='redText'>LET'S MAKE A <br />DIFFERENCE TODAY!</span></div>
-        <IconContext.Provider value={{ size: "2rem" }}>
+        <IconContext.Provider value={{ size: "3rem" }}>
           <div className='frame2Cards'>
             <div className='cardWrapper'>
               <div className='card'>
