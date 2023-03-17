@@ -14,15 +14,14 @@ const CampaignSingle = ({ contracts, signer,account }) => {
   const [campaignHeader, setcampaignHeader] = useState('');
   const [aboutCampaign, setaboutCampaign] = useState('');
   const [image, setimage] = useState('');
-  const [donationsMade, setdonationsMade] = useState('')
+  // const [donationsMade, setdonationsMade] = useState('')
   let params = useParams();
-
   useEffect(() => {
-    const loadData = async()=>{
+    async function loadData(){
       await getCampaignData();
     }
     loadData();
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
   
   const rewardNFt = (address,amount,id) =>{
     console.log('Rewarding NFT');
@@ -73,7 +72,7 @@ const CampaignSingle = ({ contracts, signer,account }) => {
     setcampaignHeader(metadataJson.headline);
     setimage(metadataJson.imageURL);
     console.log(BigNumber.from(params.campaignId));
-    const donationsMadeTill = contracts[0].filters.DonatedToCompaign(null,BigNumber.from(params.campaignId));
+    // const donationsMadeTill = contracts[0].filters.DonatedToCompaign(null,BigNumber.from(params.campaignId));
     const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com/v1/8672801189d10b2b2b6d4a3fae5c9e166a94c96f'); 
     const log =await provider.getLogs({
       fromBlock:26504526,

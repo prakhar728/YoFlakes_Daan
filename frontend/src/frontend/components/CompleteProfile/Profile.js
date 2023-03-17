@@ -30,7 +30,7 @@ const Profile = ({ account,contracts }) => {
             setNfts(nfts);
         }
       loadNfts()
-    }, [contracts])
+    }, [contracts])// eslint-disable-line react-hooks/exhaustive-deps
     
     
     return (
